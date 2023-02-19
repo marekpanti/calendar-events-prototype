@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+}
+
+.calendar-day-view {
+  width: 60%;
+  margin: auto;
+  max-width: 960px;
+  background: #313131;
+  border-radius: 15px;
+  position: relative;
+  // padding: 15px;
+
+  .item {
+    height: 50px;
+    display: flex;
+
+    .left {
+      width: 15%;
+      color: #fff;
+
+      b {
+        margin-top: -10px;
+        display: block;
+      }
+    }
+    .line {
+      width: 85%;
+      border-top: 1px solid #fff;
+    }
+  }
+
+  .event-hour {
+    position: absolute;
+    // top: calc(250px + 0.5rem + 8px);
+    // width: 90%;
+    // height: 99px;
+    background: rgba(#9b1b1b, 0.2);
+    border: 1px #9b1b1b solid;
+    border-radius: 5px;
+    left: 10%;
+  }
+}

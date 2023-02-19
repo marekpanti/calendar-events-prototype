@@ -1,0 +1,21 @@
+<h1>Welcome to our calendar</h1>
+
+<div class="calendar-day-view">
+  <div *ngFor="let event of viewEvents; let i = index" class="event-hour"
+  [style.top]="event.meta?.top"
+  [style.left]="(15 + (85 / event.meta?.width) * event.meta?.left) + '%'"
+  [style.width]="85 / event.meta?.width + '%'"
+  [style.height]="event.meta?.height"
+  [style.background]="event.color?.secondary"
+  [style.borderColor]="event.color?.primary"
+  >
+  <span>{{ event.title }}</span>
+  </div>
+  <div class="item" *ngFor="let time of [].constructor(24); let i = index">
+    <span class="left"><b>{{ i + 1 }}</b></span>
+
+    <div class="line"></div>
+  </div>
+</div>
+
+{{ viewEvents | json }}
