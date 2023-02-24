@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CalendarService } from './calendar.service';
+import { CalendarNewService } from './calendarNew.service';
 
 @Component({
   selector: 'app-calendar',
@@ -9,5 +10,9 @@ import { CalendarService } from './calendar.service';
 export class CalendarComponent {
 viewEvents = this.calendarService.getEventsPosition();
 
-constructor (private calendarService: CalendarService) {}
+constructor (private calendarService: CalendarService, private newCalendarService: CalendarNewService) {}
+
+ngOnInit() {
+  console.log(this.newCalendarService.calculateWidthsForEvents());
+}
 }
